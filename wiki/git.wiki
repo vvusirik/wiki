@@ -79,7 +79,7 @@ git push origin master
 
 # Clean up the feature branches:
 git branch -D my_new_feature
-git branch -d -r origin/my_new_feature
+git branch -dr origin/my_new_feature
 }}}
 
 == Miscellaneous Workflows ==
@@ -111,10 +111,9 @@ Aliases are stored in `~/.gitconfig`. These are some common ones that I have ali
 
 {{{
 [alias]
-    # up is Hg's alias for checkout, a lot of people use "co", but I use co for commit.
-	up = checkout
+	co = checkout
 	br = branch
-	co = commit
+	ci = commit
     # Add modified / deleted files to staging and commit
 	ca = commit -a
 	st = status
