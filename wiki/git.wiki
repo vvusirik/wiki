@@ -99,6 +99,27 @@ git push --force origin my_new_feature
 }}}
 
 === Squash commits ===
+Sometimes you may want to fold / squash several commits into a single commit. Git has an interactive rebase mode to provide that functionality. 
+{{{
+git rebase -i HEAD~[# of commits to squash]
+}}}
+
+In the interactive editor, mark the head commit as "pick" or "p" and the preceding commits as "squash" or "s".
 
 == Aliases ==
-Aliases are stored in `~/.gitconfig`
+Aliases are stored in `~/.gitconfig`. These are some common ones that I have aliased:
+
+{{{
+[alias]
+    # up is Hg's alias for checkout, a lot of people use "co", but I use co for commit.
+	up = checkout
+	br = branch
+	co = commit
+    # Add modified / deleted files to staging and commit
+	ca = commit -a
+	st = status
+	amend = commit --amend --no-edit
+	prev = checkout HEAD^
+	unstage = restore --staged
+	graph = log --all --graph --decorate --oneline
+}}}
