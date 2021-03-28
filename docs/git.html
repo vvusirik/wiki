@@ -12,12 +12,20 @@
 
 <div id="Git-Fork + Rebase Workflow"><h2 id="Fork + Rebase Workflow" class="header"><a href="#Git-Fork + Rebase Workflow">Fork + Rebase Workflow</a></h2></div>
 <p>
-When starting a new feature, follow this basic fork + rebase workflow:
-NOTE: this should only be done with forked repos. It is very annoying to use on a shared repo.
-<a href="https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470">https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470</a>
+The fork and rebase workflow is a nice way to keep the git history of a project clean and linear. 
+It uses forked repos to isolate changes so that one contributor's branches don't pollute another person's local repo.
+</p>
+
+<p>
+IMPORTANT: This should only be done with forked repos. It is very annoying to use on a shared repo.
+This workflow is based on this blog post: <a href="https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470">https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470</a>
 </p>
 
 <div id="Git-Fork + Rebase Workflow-Fork setup"><h3 id="Fork setup" class="header"><a href="#Git-Fork + Rebase Workflow-Fork setup">Fork setup</a></h3></div>
+<p>
+First, fork the repo that you're going to work on in Github.
+Then, clone that repo to your local machine and set the "upstream" repo, so git knows where the original repo lives:
+</p>
 <pre>
 git clone [url of fork repo]
 git remote add upstream [url of official upstream repo]
@@ -59,15 +67,31 @@ git pull --rebase upstream master
 # Resolve potential merge conflicts...
 ...
 
-# Push feature branch to remote
-# You need to force for history rewrite, so make sure no one else is using this branch. 
+# Sync the local rebase of your branch to the remote fork repo.
+# You need to use --force or -f since history is being rewritten, so make sure no one else is using this branch. 
 # Since this is a fork, no one else should be using the branch anyway.
-git push --force origin my_new_feature
+git push -f origin my_new_feature
+</pre>
+
+<div id="Git-Fork + Rebase Workflow-Resolving merge conflicts"><h3 id="Resolving merge conflicts" class="header"><a href="#Git-Fork + Rebase Workflow-Resolving merge conflicts">Resolving merge conflicts</a></h3></div>
+<p>
+With the rebase workflow, git adds your commits on top of master one at a time.
+If there's a conflict, it pauses the rebase so you can fix it.
+</p>
+<pre>
+# Once the merge conflicts are fixed, add the changes to mark them as resolved
+git add [...]
+git rebase --continue 
+
+# Sync the local rebase of your branch to the remote fork repo.
+# You need to use --force or -f since history is being rewritten, so make sure no one else is using this branch. 
+# Since this is a fork, no one else should be using the branch anyway.
+git push -f origin my_new_feature
 </pre>
 
 <div id="Git-Fork + Rebase Workflow-Cleanup"><h3 id="Cleanup" class="header"><a href="#Git-Fork + Rebase Workflow-Cleanup">Cleanup</a></h3></div>
 <p>
-When your feature is done, approved, and merged, clean up your local and remote repos. 
+When your feature is done, approved, and merged into the upstream master, clean up your local and remote repos. 
 </p>
 
 <pre>
@@ -82,15 +106,25 @@ git branch -D my_new_feature
 git branch -d -r origin/my_new_feature
 </pre>
 
-<div id="Git-Fork + Rebase Workflow-Amend a branch commit"><h3 id="Amend a branch commit" class="header"><a href="#Git-Fork + Rebase Workflow-Amend a branch commit">Amend a branch commit</a></h3></div>
+<div id="Git-Miscellaneous Workflows"><h2 id="Miscellaneous Workflows" class="header"><a href="#Git-Miscellaneous Workflows">Miscellaneous Workflows</a></h2></div>
+
+<div id="Git-Miscellaneous Workflows-Amend a branch commit"><h3 id="Amend a branch commit" class="header"><a href="#Git-Miscellaneous Workflows-Amend a branch commit">Amend a branch commit</a></h3></div>
+<p>
+Sometimes you want to modify a commit that is already in a branch that you pushed to your remote. 
+Maybe because you made a typo or just need to change small things that are still topically related to the commit you pushed.
+You can amend the commit and push it to make these types of changes.
+</p>
+
 <pre>
-# On your feature branch:
+# On your feature branch, do the work you want to amend to a given commit.
 git add [...]
 git commit --amend [...]
 
-# Need to force since we're updating commit history:
+# Need to force since we're updating history of a commit that's already in the remote branch:
 git push --force origin my_new_feature
 </pre>
+
+<div id="Git-Miscellaneous Workflows-Squash commits"><h3 id="Squash commits" class="header"><a href="#Git-Miscellaneous Workflows-Squash commits">Squash commits</a></h3></div>
 
 <div id="Git-Aliases"><h2 id="Aliases" class="header"><a href="#Git-Aliases">Aliases</a></h2></div>
 <p>
