@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>vimwiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="vimwiki basics"><h1 id="vimwiki basics" class="header"><a href="#vimwiki basics">vimwiki basics</a></h1></div>
+
+<div id="vimwiki basics-Quickstart"><h2 id="Quickstart" class="header"><a href="#vimwiki basics-Quickstart">Quickstart</a></h2></div>
+
+<p>
+<a href="https://vimwiki.github.io/">https://vimwiki.github.io/</a>
+</p>
+
+<p>
+Press &lt;Leader&gt;ww to go to your index page. 
+By default it is located in ~/vimwiki/index.wiki.
+</p>
+
+<p>
+Feed it with the following example:
+</p>
+<pre>
+= My knowledge base =
+    * Tasks -- things to be done _yesterday_!!!
+    * Project Gutenberg -- good books are power.
+    * Scratchpad -- various temporary stuff.
+</pre>
+
+<p>
+Place your cursor on Tasks and press Enter to create a link. Press Enter again to open it. Edit the new page, save it, and press Backspace to jump back to your index.
+A Vimwiki link can be constructed from more than one word. Just visually select the words to be linked and press Enter. Try it with Project Gutenberg. The result should look something like:
+</p>
+
+<pre>
+= My knowledge base =
+    * [[Tasks]] -- things to be done _yesterday_!!!
+    * [[Project Gutenberg]] -- good books are power.
+    * Scratchpad -- various temporary stuff.
+</pre>
+
+<p>
+See :h vimwiki for the full documentation.
+</p>
+
+<div id="vimwiki basics-Key Bindings"><h2 id="Key Bindings" class="header"><a href="#vimwiki basics-Key Bindings">Key Bindings</a></h2></div>
+
+<p>
+&lt;Leader&gt;ww – Open the default wiki index file
+&lt;Leader&gt;ws – Select and open wiki index file
+&lt;Enter&gt; – Follow/Create wiki link
+&lt;Backspace&gt; – Go back to parent(previous) wiki link
+&lt;Tab&gt; – Find next wiki link
+&lt;Shift-Tab&gt; – Find previous wiki link
+</p>
+
+<p>
+For more keys, see :h vimwiki-mapping
+</p>
+
+<div id="vimwiki basics-Commands"><h2 id="Commands" class="header"><a href="#vimwiki basics-Commands">Commands</a></h2></div>
+
+<p>
+:Vimwiki2HTML – Convert current wiki page to HTML
+:VimwikiAll2HTML – Convert all your wiki pages to HTML
+</p>
+
+<p>
+For more, see :h vimwiki-commandss
+</p>
+
+</body>
+</html>
