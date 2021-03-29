@@ -77,9 +77,10 @@ git pull upstream master
 # Bring your forked remote repo's master branch up to date:
 git push origin master
 
-# Clean up the feature branches:
+# Clean up the feature branches (local, local ref to remote origin, remote origin)
 git branch -D my_new_feature
 git branch -dr origin/my_new_feature
+git push --delete origin my_new_feature
 }}}
 
 == Miscellaneous Workflows ==
