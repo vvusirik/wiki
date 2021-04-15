@@ -35,6 +35,8 @@ See :h vimwiki for the full documentation.
 <Backspace> – Go back to parent(previous) wiki link
 <Tab> – Find next wiki link
 <Shift-Tab> – Find previous wiki link
+<Leader>wi – Open the diary wiki index
+<Leader>w<Leader>w – Open diary entry for today 
 
 For more keys, see :h vimwiki-mapping
 

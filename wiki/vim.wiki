@@ -1,0 +1,10 @@
+== vim general ==
+* <C-w>z - Close all preview windows
+
+== vim fugitive ==
+
+Handling merge conflicts
+1. `<Leader>gs` - Git Status
+2. On files that have a merge conflict use `dv` (diffview)
+3. Use `<Leader>gj` to choose left, `<Leader>gk` to choose right.
+4. Once conflicts have been handled, use `<C-w>o` to close the diff view. 
