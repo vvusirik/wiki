@@ -1,0 +1,12 @@
+# Wiki 
+    * [vimwiki](vimwiki)
+    * [vim](vim)
+    * [git](git)
+    * [tmux](tmux)
+    * [django](django)
+    * [calculib](calculib)
+    * [scala](scala)
+    * [rust](rust)
+    * [interview_prep](interview_prep)
+    * [learn_list](learn_list)
+    * [cpp](cpp)

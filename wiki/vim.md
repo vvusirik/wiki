@@ -1,8 +1,9 @@
-== vim general ==
+# vim
+
+## vim general 
 * <C-w>z - Close all preview windows
 
-== vim fugitive ==
-
+ ## vim fugitive 
 Handling merge conflicts
 1. `<Leader>gs` - Git Status
 2. On files that have a merge conflict use `dv` (diffview)
