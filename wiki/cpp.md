@@ -74,3 +74,20 @@ int main() {
     vector<int>::iterator itr = find_if(vec.begin(), vec.end(), isOdd);
 }
 ```
+
+### CMake
+Cmake is a build toolchain
+It uses a `CMakeLists.txt` file to manage the build.
+Example: 
+```
+cmake_minimum_required(VERSION 3.10)
+
+# set the project name
+project(quantlab)
+
+# add the executable
+add_executable(quantlab main.cpp)
+```
+
+1. run `cmake` in the directory the first time to initialize
+2. run `cmake --build .` to build the executable

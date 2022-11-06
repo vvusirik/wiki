@@ -8,10 +8,8 @@
 * See `:help vimwiki-todo`
 
 ## Learn List
-* Math
-    * [✗] Kalman Filter
 * Rust
-    * [✗] Lifetime Annotations
+    * [✓] Lifetime Annotations
     * [✗] Smart Pointers (Box, Rc, RefCell, Arc)
 
 ## Personal Projects
@@ -21,11 +19,7 @@
     * [✗] Github
     * [✗] fzf integration
     * [✗] tmux script
-
-## Interview Prep
-* [blind_75](blind_75)
-* [✗] Implement Advanced Data Structures
-    * [✗] Trie
-    * [✗] Heap
+* [✗] Clippy Vim Plugin - Better copy paste selection (Select register with telescope like interface)
+* [✗] Float windows for wiki, todo, and diary
 
 ## Reading List 

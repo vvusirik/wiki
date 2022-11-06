@@ -85,9 +85,15 @@ You should know the time complexities associated with data structure opterations
 * Mergesort
 * Binary Search
 * Quickselect
+* Prim's (MST)
+* Union Find (Connected Components)
+* Sliding Window
+* Two Pointer
+* Fast / Slow pointer
+* Merge Intervals
+* Backtracking
 
 ## Behavioral Interviews
-
 Curate a list of experiences that you think would demonstrate valuable people skills. Reviewing these will give you starting points to relate behavioral questions to.
 
 ## System Design Interviews

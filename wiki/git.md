@@ -123,3 +123,8 @@ Aliases are stored in `~/.gitconfig`. These are some common ones that I have ali
 	unstage = restore --staged
 	graph = log --all --graph --decorate --oneline
 ```
+
+## Worktrees
+* 
+* A simple setup for worktrees: https://morgan.cugerone.com/blog/how-to-use-git-worktree-and-in-a-clean-way/
+* Using remotes with worktrees: https://morgan.cugerone.com/blog/workarounds-to-git-worktree-using-bare-repository-and-cannot-fetch-remote-branches/
